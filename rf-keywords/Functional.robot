@@ -12,7 +12,7 @@ ${URL}    https://stg.aemsites:F93bwU8c9G@stg-www.bostonwhaler.com
 #${BROWSER}          ${ROBOT_BROWSER}
 &{options}          platformName=${platformName}    version=${version}    visual=${visual}    network=${network}    name=RobotFramework LambdaTest    browserName=${browserName}    smartUI.project=Boston Whaler   build=VisualUI
 &{CAPABILITIES}     LT:Options=&{options}
-${REMOTE_URL}       http://Sudheer.Y:6UK9IZTFLJwQllByuzNU7ITCBpN2IlWBL0L7j7cnPHsXozBX3b@hub.lambdatest.com/wd/hub
+${REMOTE_URL}       http://%{LT_USERNAME}:%{LT_ACCESS_KEY}@hub.lambdatest.com/wd/hub
 
 
 # Home Page
