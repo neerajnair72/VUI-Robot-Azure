@@ -1,0 +1,57 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  vmImage: 'windows-latest'
+
+strategy:
+  matrix:
+    Python 3.9:
+      python.version: '3.9'
+  maxParallel: 1
+
+variables:
+  LT_USERNAME: 'neerajn'
+  LT_ACCESS_KEY: 'J3zIzXZfnxcFZDjaG5SmRb9cIUjoRtjzcX5fPsQcWxVkxBX3Lf'
+  build_name:  'LT_BUILD_NAME'
+  
+steps:
+
+- task: UsePythonVersion@0
+  inputs: 
+    versionSpec: '$(python.version)'
+    architecture: 'x64'
+
+- script: pip install robotframework robotframework-seleniumlibrary webdrivermanager
+  displayName: 'Install dependencies'
+
+- script: make run_all_in_parallel
+  displayName: 'Run Robot Framework Tests' 
+  continueOnError: true
+
+- task: Lambdatest.lambda-azure-pipeline-extention.showResults-task.LambdatestResults@1
+  displayName: 'Lambdatest Results'
+
+
+# - task: PublishTestResults@2
+#   displayName: 'Publish Test Results'
+#   continueOnError: true
+#   inputs:
+#     testResultsFiles: outputxunit.xml
+#     publishRunAttachments: true
+
+# - task: CopyFiles@2
+#   inputs:
+#     contents: '_buildOutput/**'
+#     targetFolder: $(Build.SourcesDirectory)
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathToPublish: $(Build.SourcesDirectory)
+    artifactName: MyBuildOutputs
+    
+

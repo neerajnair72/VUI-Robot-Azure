@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Find A Dealer" tests="1" errors="0" failures="1" skipped="0" time="0.282" timestamp="2023-02-03T12:53:53.682000">
+<testcase classname="Find A Dealer" name="Dealer Search Should Contain All Valid Countries" time="0.001">
+<failure message="Parent suite setup failed:&#10;Variable '${CAPABILITIES}' not found." type="AssertionError"/>
+</testcase>
+<properties>
+<property name="Documentation" value="Test suite for Dealer Search"/>
+</properties>
+</testsuite>
