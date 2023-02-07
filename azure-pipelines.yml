@@ -23,8 +23,10 @@ variables:
   build_name:  'LT_BUILD_NAME'
   
 steps:
+
 - task: configuration@1
   inputs:
+    connection: 'Demo Tunnel'
     isTunnelActivate: false
 
 - task: UsePythonVersion@0
