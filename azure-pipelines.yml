@@ -20,7 +20,7 @@ strategy:
 variables:
   LT_USERNAME: 'neerajn'
   LT_ACCESS_KEY: 'J3zIzXZfnxcFZDjaG5SmRb9cIUjoRtjzcX5fPsQcWxVkxBX3Lf'
-  build_name:  'LT_BUILD_NAME'
+  LT_BUILD_NAME:  'LT_BUILD_NAME'
   
 steps:
 
