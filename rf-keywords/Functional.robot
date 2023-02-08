@@ -10,7 +10,7 @@ Library    LambdaTestStatus.py
 ${TIMEOUT}    120 Secs
 ${URL}    https://stg.aemsites:F93bwU8c9G@stg-www.bostonwhaler.com
 #${BROWSER}          ${ROBOT_BROWSER}
-&{options}          platformName=${platformName}    version=${version}    visual=${visual}    network=${network}    name=RobotFramework LambdaTest    browserName=${browserName}    smartUI.project=Boston Whaler   build=VisualUI
+&{options}          platformName=${platformName}    version=${version}    visual=${visual}    network=${network}    name=RobotFramework LambdaTest    browserName=${browserName}    smartUI.project=Boston Whaler   build=%{LT_BUILD_NAME}
 &{CAPABILITIES}     LT:Options=&{options}
 ${REMOTE_URL}       https://neerajn:J3zIzXZfnxcFZDjaG5SmRb9cIUjoRtjzcX5fPsQcWxVkxBX3Lf@hub.lambdatest.com/wd/hub
 
