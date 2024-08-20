@@ -19,7 +19,7 @@ strategy:
 
 variables:
   LT_USERNAME: 'neerajn'
-  LT_ACCESS_KEY: 'J3zIzXZfnxcFZDjaG5SmRb9cIUjoRtjzcX5fPsQcWxVkxBX3Lf'
+  LT_ACCESS_KEY: '0z5UPFS7WDpZutTHEfSZWn3iOZz8Eydmh49evnJuNEqjTaXCd8'
   
 steps:
 
