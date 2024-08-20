@@ -27,7 +27,8 @@ steps:
   inputs:
     connection: 'Demo Tunnel'
     isTunnelActivate: true
-    tunnelOptions: “tunnelName”:”azure tunnel”
+    tunnelOptions: '{"tunnelName":"Neeraj"}'
+
 
 - task: UsePythonVersion@0
   inputs: 
