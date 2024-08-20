@@ -26,7 +26,7 @@ steps:
 - task: configuration@1
   inputs:
     connection: 'Demo Tunnel'
-    isTunnelActivate: false
+    isTunnelActivate: true
 
 - task: UsePythonVersion@0
   inputs: 
