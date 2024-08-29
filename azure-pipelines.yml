@@ -27,7 +27,10 @@ steps:
   inputs:
     connection: 'Demo Tunnel'
     isTunnelActivate: true
-    tunnelOptions: '{"tunnelName":"Testbasicauth",  "b":"https://stg.aemsites:F93bwU8c9G@stg-www.mercuryracing.com", "mitm" : true, "logFile" : "./logs", "v" : true }'
+    tunnelOptions: '{"tunnelName":"Testbasicauth",  "b":"https://stg.aemsites:F93bwU8c9G@stg-www.mercuryracing.com", "mitm" : true, "v" : true }'
+- task: CmdLine@2
+  inputs:
+    script: 'sleep 120'
 
 - task: UsePythonVersion@0
   inputs: 
