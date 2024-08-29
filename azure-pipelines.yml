@@ -30,7 +30,7 @@ steps:
     tunnelOptions: '{"tunnelName":"Testbasicauth",  "b":"https://stg.aemsites:F93bwU8c9G@stg-www.mercuryracing.com", "mitm" : true, "logFile" : "D:\\a\\1\\a\\logs", "v" : true }'
 - task: CmdLine@2
   inputs:
-    script: 'sleep 10'
+    script: 'sleep 5'
 
 # - task: UsePythonVersion@0
 #   inputs: 
@@ -44,6 +44,7 @@ steps:
 #   displayName: 'Run Robot Framework Tests' 
 #   continueOnError: true
 
+- task: stoptunnel@1
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
@@ -63,7 +64,7 @@ steps:
 #     contents: '_buildOutput/**'
 #     targetFolder: $(Build.SourcesDirectory)
 
-- task: stoptunnel@1
+
 
 
 
