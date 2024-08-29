@@ -27,8 +27,7 @@ steps:
   inputs:
     connection: 'Demo Tunnel'
     isTunnelActivate: true
-    tunnelOptions: '{"tunnelName":"Neeraj"}'
-
+    tunnelOptions: '{"tunnelName":"Neeraj",  "basicAuth":"https://stg.aemsites:F93bwU8c9G@stg-www.mercuryracing.com?mboxDisable=1", "mitm" : true}'
 
 - task: UsePythonVersion@0
   inputs: 
