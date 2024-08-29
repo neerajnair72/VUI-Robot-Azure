@@ -27,25 +27,28 @@ steps:
   inputs:
     connection: 'Demo Tunnel'
     isTunnelActivate: true
-    tunnelOptions: '{"tunnelName":"Testbasicauth",  "b":"https://stg.aemsites:F93bwU8c9G@stg-www.mercuryracing.com", "mitm" : true, "v" : true }'
+    tunnelOptions: '{"tunnelName":"Testbasicauth",  "b":"https://stg.aemsites:F93bwU8c9G@stg-www.mercuryracing.com", "mitm" : true, "logFile" : "$(Build.ArtifactStagingDirectory)", "v" : true }'
 - task: CmdLine@2
   inputs:
     script: 'sleep 120'
 
-- task: UsePythonVersion@0
-  inputs: 
-    versionSpec: '$(python.version)'
-    architecture: 'x64'
+# - task: UsePythonVersion@0
+#   inputs: 
+#     versionSpec: '$(python.version)'
+#     architecture: 'x64'
 
-- script: pip install robotframework robotframework-seleniumlibrary webdrivermanager
-  displayName: 'Install dependencies'
+# - script: pip install robotframework robotframework-seleniumlibrary webdrivermanager
+#   displayName: 'Install dependencies'
 
-- script: make run_all_in_parallel
-  displayName: 'Run Robot Framework Tests' 
-  continueOnError: true
+# - script: make run_all_in_parallel
+#   displayName: 'Run Robot Framework Tests' 
+#   continueOnError: true
 
-- task: Lambdatest.lambda-azure-pipeline-extention.showResults-task.LambdatestResults@1
-  displayName: 'Lambdatest Results'
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
 
 
 # - task: PublishTestResults@2
@@ -59,9 +62,8 @@ steps:
 #   inputs:
 #     contents: '_buildOutput/**'
 #     targetFolder: $(Build.SourcesDirectory)
-- task: PublishBuildArtifacts@1
-  inputs:
-    pathToPublish: $(Build.SourcesDirectory)
-    artifactName: MyBuildOutputs
-    
+
+- task: stoptunnel@1
+
+
 
