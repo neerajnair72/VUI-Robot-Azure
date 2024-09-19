@@ -31,7 +31,7 @@ steps:
 
 - task: CmdLine@2
   inputs:
-    script: 'sleep 55'
+    script: 'sleep 360'
 
 # - task: UsePythonVersion@0
 #   inputs: 
