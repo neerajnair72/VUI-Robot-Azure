@@ -27,7 +27,8 @@ steps:
   inputs:
     connection: 'Demo Tunnel'
     isTunnelActivate: true
-    tunnelOptions: '{"tunnelName":"Testbasicauth",  "basic-auth":"https://stg.aemsites:F93bwU8c9G@stg-www.mercuryracing.com", "mitm" : true, "logFile" : "D:\\a\\1\\a\\logs", "v" : true }'
+    tunnelOptions: '{   "tunnelName": "Testbasicauth",   "basic-auth": "https://stg.aemsites:F93bwU8c9G@stg-www.mercuryracing.com",   "mitm": true,   "logFile": "D:\\a\\1\\a\\logs",   "v": true }'
+
 - task: CmdLine@2
   inputs:
     script: 'sleep 55'
