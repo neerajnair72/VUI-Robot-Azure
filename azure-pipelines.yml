@@ -22,12 +22,13 @@ variables:
   LT_ACCESS_KEY: '0z5UPFS7WDpZutTHEfSZWn3iOZz8Eydmh49evnJuNEqjTaXCd8'
   
 steps:
-
 - task: configuration@1
   inputs:
-    connection: 'Demo Tunnel'
+    connection: 'trstbasicauth'
     isTunnelActivate: true
     tunnelOptions: '{   "tunnelName": "Testbasicauth",   "basic-auth": "https://stg.aemsites:F93bwU8c9G@stg-www.mercuryracing.com",   "mitm": true,   "logFile": "D:\\a\\1\\a\\logs",   "v": true }'
+    isAppAutomate: false
+    isSmartUI: false
 
 - task: CmdLine@2
   inputs:
